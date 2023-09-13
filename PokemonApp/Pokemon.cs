@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace PokemonApp
         private int Health;
         private string AttackOne;
         private string AttackTwo;
+        static private int PokemonCounter = 0;
 
         public Pokemon(string name, PokemonType type, int health, string attackOne, string attackTwo)
         {
@@ -21,6 +23,7 @@ namespace PokemonApp
             this.Health = health;
             this.AttackOne = attackOne;
             this.AttackTwo = attackTwo;
+            PokemonCounter++;
         }
 
         public Pokemon(string name, PokemonType type, int health, string attackOne)
@@ -29,7 +32,12 @@ namespace PokemonApp
             this.Type = type;
             this.Health = health;
             this.AttackOne = attackOne;
+            PokemonCounter++;
         }
+
+        public static int GetCounter() { return PokemonCounter; }
+
+
 
         public void Attack(Pokemon enemy)
         {
