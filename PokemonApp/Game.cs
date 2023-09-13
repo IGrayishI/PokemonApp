@@ -9,7 +9,7 @@ namespace PokemonApp
     internal class Game
     {
 
-        List<Pokemon> AllPokemons = new List<Pokemon>();
+        public List<Pokemon> AllPokemons = new List<Pokemon>();
         Trainer ash = new Trainer("Ash");
 
         public Game()

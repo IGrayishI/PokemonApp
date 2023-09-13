@@ -19,31 +19,34 @@
         static void Main(string[] args)
         {
             Game game = new Game();
-            game.CatchEmAll();
-            game.DisplayAshPokemons();  
-
-            Trainer ash = new Trainer("Ash");
-            //Trainer misty = new Trainer("Misty");
-
-            //ash.CatchPokemon(pikachu);
-            //misty.CatchPokemon(bulbasaur);
-
-            //Console.WriteLine($"{ash.GetName()} has {ash.GetTeam()[0].GetName()} on his team, with {ash.GetTeam()[0].GetHealth()} hp");
-            //Console.WriteLine($"{misty.GetName()} has {misty.GetTeam()[0].GetName()} on his team, with {ash.GetTeam()[0].GetHealth()} hp\n");
-
-            //Console.WriteLine($"A Battle has begun between the two trainers {ash.GetName()} and {misty.GetName()}\n");
-
-            //Console.WriteLine($"{ash.GetName()} commands {ash.GetTeam()[0].GetName()} to attack!");
-            //ash.GetTeam()[0].Attack(bulbasaur);
-            //Console.WriteLine($"{misty.GetName()}s {misty.GetTeam()[0].GetName()} now has {misty.GetTeam()[0].GetHealth()}hp\n");
-
-            //Console.WriteLine("Misty Retaliate!\n");
-
-            //Console.WriteLine($"{misty.GetName()} commands her {misty.GetTeam()[0].GetName()} to attack!");
-            //misty.GetTeam()[0].Attack(pikachu);
-            //Console.WriteLine($"{ash.GetTeam()[0].GetName()} now has {ash.GetTeam()[0].GetHealth()}");
-
+            //game.CatchEmAll();
+            //game.DisplayAshPokemons();  
             
+            Trainer ash = new Trainer("Ash");
+            Trainer misty = new Trainer("Misty");
+
+            var bulbasaur = game.AllPokemons[1];
+            var pikachu = game.AllPokemons[0];
+
+            ash.CatchPokemon(game.AllPokemons[0]);
+            misty.CatchPokemon(game.AllPokemons[1]);
+
+            Console.WriteLine($"{ash.GetName()} has {ash.GetTeam()[0].GetName()} on his team, with {ash.GetTeam()[0].GetHealth()} hp");
+            Console.WriteLine($"{misty.GetName()} has {misty.GetTeam()[0].GetName()} on his team, with {ash.GetTeam()[0].GetHealth()} hp\n");
+
+            Console.WriteLine($"A Battle has begun between the two trainers {ash.GetName()} and {misty.GetName()}\n");
+
+            Console.WriteLine($"{ash.GetName()} commands {ash.GetTeam()[0].GetName()} to attack!");
+            ash.GetTeam()[0].Attack(bulbasaur);
+            Console.WriteLine($"{misty.GetName()}s {misty.GetTeam()[0].GetName()} now has {misty.GetTeam()[0].GetHealth()}hp\n");
+
+            Console.WriteLine("Misty Retaliate!\n");
+
+            Console.WriteLine($"{misty.GetName()} commands her {misty.GetTeam()[0].GetName()} to attack!");
+            misty.GetTeam()[0].Attack(pikachu);
+            Console.WriteLine($"{ash.GetTeam()[0].GetName()} now has {ash.GetTeam()[0].GetHealth()}");
+
+
 
         }
 
